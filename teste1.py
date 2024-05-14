@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 funcs={}
 func = []
 
@@ -15,6 +17,19 @@ def insert():
         while(renda<2150 or renda>6950):
             renda = float(input('Salário bruto do funcionário: '))
 
+    pfalta = input('Esse funcionario faltou S/N: ')
+        
+    qtfalta = 0
+    falta = []
+    if pfalta.lower() == 's':
+        qtfalta = int(input('Quantas faltas: '))
+        renda = renda-(qtfalta*renda/30)
+        
+            
+    else: 
+        falta.append('Não possui falta')
+        qtFalta=0
+    renda=renda-(qtfalta*renda/30)
     imp=0
     if(renda<=2259.2):
         imp=0
@@ -29,32 +44,14 @@ def insert():
     sal = renda-renda*imp
 
 
-    pfalta = input('Esse funcionario faltou S/N: ')
-        
-    qtfalta = 0
-    falta = []
-    if pfalta.lower() == 's':
-        qtfalta = int(input('Quantas faltas: '))
-        renda = renda-(qtfalta*renda/30)
-        
-            
-    else: 
-        falta.append('Não possui falta')
-        qtFalta=0
     func=[nome,cod_func,renda,qtfalta,sal,imp*100]
     funcs[matricula]=func
     print(funcs)
 def remove():
     rmat=int(input("Digite a matrícula do funcionário que deseja remover: "))
     del funcs [rmat]
-def imposto():
 
-
-
-
-
- n = int(input('Digite a opção: '))
-
+n = int(input('Digite a opção: '))
 while n>0:
     if(n==1):
         insert()
@@ -62,3 +59,6 @@ while n>0:
     if(n==2):
         remove()
         n = int(input('Digite a opção: '))
+    if(n==3):
+        print(funcs)
+        break
