@@ -103,14 +103,21 @@ def maiorsal():
         for chave,dados in funcs.items():
             if dados[4] > maior:
                 maior = dados[4]
-                if maior in dados[4]:
-                    print(f'Matrícula: {funcs[chave][6]}')
-                    print(f'Nome: {funcs[chave][0]}')
-                    print(f'Código da função: {funcs[chave][1]}')
-                    print(f'Salário bruto: {funcs[chave][2]:.2f}')
-                    print(f'Percentual de imposto: {funcs[chave][5]:.1f}%')
-                    print(f'Salário líquido: {funcs[chave][4]:.2f}')
-                    print('-'*50)
+            if dados[4] == maior:
+                print(f'Matrícula: {funcs[chave][6]}')
+                print(f'Nome: {funcs[chave][0]}')
+                print(f'Código da função: {funcs[chave][1]}')
+                print(f'Salário bruto: {funcs[chave][2]:.2f}')
+                print(f'Percentual de imposto: {funcs[chave][5]:.1f}%')
+                print(f'Salário líquido: {funcs[chave][4]:.2f}')
+                print('-'*50)
+        print(f'Matrícula: {funcs[chave][6]}')
+        print(f'Nome: {funcs[chave][0]}')
+        print(f'Código da função: {funcs[chave][1]}')
+        print(f'Salário bruto: {funcs[chave][2]:.2f}')
+        print(f'Percentual de imposto: {funcs[chave][5]:.1f}%')
+        print(f'Salário líquido: {funcs[chave][4]:.2f}')
+        print('-'*50)
 def maisfalta():
     if len(funcs.keys()) == 0:
         print('Não há funcionários cadastrados')
@@ -120,13 +127,12 @@ def maisfalta():
         for chave,dados in funcs.items():
             if dados[3] > maior:
                 maior = dados[3]
-                if maior in dados[3]:
-                    print(f'Matrícula: {funcs[chave][6]}')
-                    print(f'Nome: {funcs[chave][0]}')
-                    print(f'Código da função: {funcs[chave][1]}')
-                    print(f'Número de faltas: {funcs[chave][3]}')
-                    print(f'Desconto no salário: {funcs[chave][7]} ')
-                    print('-'*50)
+        print(f'Matrícula: {funcs[chave][6]}')
+        print(f'Nome: {funcs[chave][0]}')
+        print(f'Código da função: {funcs[chave][1]}')
+        print(f'Número de faltas: {funcs[chave][3]}')
+        print(f'Desconto no salário: {funcs[chave][7]} ')
+        print('-'*50)
 def menu():
     print('1 - Inserir funcionário \n2 - Remover funcionário\n3 - Exibir folha de pagamento de um funcionário\n4 - Relatório do salário bruto e líquido de todos os funcionários\n5 - Imprimir as informações do funcionário com maior salário líquido\n6 - Imprimir as informações do funcionário com o maior número de faltas no mês\n7 - Sair')
     n = int(input('Digite a opção: '))
